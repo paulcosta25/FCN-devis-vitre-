@@ -3,7 +3,7 @@ name: caveman-compress
 description: >
   Compresse les fichiers mémoire en langage naturel (CLAUDE.md, todos, préférences) au format caveman
   pour économiser les tokens d'entrée. Préserve toute la substance technique, le code, les URLs et la structure.
-  La version compressée écrase le fichier original. Sauvegarde lisible enregistrée sous FILE.original.md.
+  La version compressée écrase le fichier original. Sauvegarde lisible par l'humain enregistrée sous FILE.original.md.
   Déclenchement : /caveman-compress CHEMIN ou "compresser fichier mémoire"
 ---
 
@@ -11,7 +11,7 @@ description: >
 
 ## Objectif
 
-Compresser les fichiers en langage naturel (CLAUDE.md, todos, préférences) en style homme des cavernes pour réduire les tokens d'entrée.
+Compresser les fichiers en langage naturel (CLAUDE.md, todos, préférences) en style homme des cavernes pour réduire les tokens d'entrée. La version compressée écrase l'original. Sauvegarde lisible par l'humain enregistrée sous `<nom_fichier>.original.md`.
 
 ## Déclenchement
 
@@ -24,25 +24,30 @@ Compresser les fichiers en langage naturel (CLAUDE.md, todos, préférences) en 
 
 python3 -m scripts <chemin_absolu_fichier>
 
+3. Le CLI va :
+- détecter le type de fichier
+- appeler Claude pour compresser
+- valider la sortie
+- retry jusqu'à 2 fois
+- si encore en échec après 2 retries : signaler l'erreur
+
 ## Règles de compression
 
 ### Supprimer
 - Articles : un, une, le, la, les, des
 - Remplissage : juste, vraiment, basiquement, simplement
 - Politesses : "bien sûr", "certainement", "avec plaisir"
-- Hésitations : "il pourrait valoir la peine", "vous pourriez considérer"
 
 ### Préserver EXACTEMENT
-- Blocs de code (``` et indentés)
-- Code inline (`backtick`)
+- Blocs de code (clôturés ``` et indentés)
+- Code inline (contenu `backtick`)
 - URLs et liens
 - Chemins de fichiers
 - Commandes
 - Termes techniques
-- Variables d'environnement
 
-### Limites
+## Limites
 
 - Compresser UNIQUEMENT les fichiers en langage naturel (.md, .txt)
-- NE JAMAIS modifier : .py, .js, .ts, .json, .yaml, .toml, .env
+- NE JAMAIS modifier : .py, .js, .ts, .json, .yaml
 - Fichier original sauvegardé sous FILE.original.md avant écrasement

@@ -31,17 +31,17 @@ Oui : "Bug dans middleware auth. Vérification expiration token utilise `<` pas 
 |-------|------------|
 | **lite** | Pas de remplissage/hésitations. Garder articles + phrases complètes. Professionnel mais serré |
 | **full** | Supprimer articles, fragments OK, synonymes courts. Homme des cavernes classique |
-| **ultra** | Abréger mots prose (DB/auth/config/req/res/fn/impl), supprimer conjonctions, flèches pour causalité (X → Y), un mot quand un mot suffit. Symboles code, noms fonctions, noms API, chaînes d'erreur : jamais abréger |
-| **wenyan-lite** | Semi-classique. Supprimer remplissage/hésitations mais garder structure grammaticale, registre classique |
-| **wenyan-full** | Concision classique maximale. Pleinement 文言文. Réduction 80-90% caractères. |
-| **wenyan-ultra** | Abréviation extrême tout en gardant sensation chinois classique. Compression maximale. |
+| **ultra** | Abréger mots prose (DB/auth/config/req/res/fn/impl), supprimer conjonctions, flèches pour causalité (X → Y) |
+| **wenyan-lite** | Semi-classique. Supprimer remplissage/hésitations mais garder structure grammaticale |
+| **wenyan-full** | Concision classique maximale. Pleinement 文言文. Réduction 80-90% caractères |
+| **wenyan-ultra** | Abréviation extrême tout en gardant sensation chinois classique |
 
 ## Auto-Clarté
 
 Abandonner caveman quand :
 - Avertissements de sécurité
 - Confirmations d'actions irréversibles
-- Séquences multi-étapes où fragments risquent mauvaise lecture
+- Séquences multi-étapes où l'ordre des fragments risquent une mauvaise lecture
 - L'utilisateur demande à clarifier ou répète la question
 
 Reprendre caveman après partie claire terminée.

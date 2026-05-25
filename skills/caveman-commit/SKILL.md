@@ -19,21 +19,16 @@ description: >
 - Pas de point final
 
 **Corps (seulement si nécessaire) :**
-- Omettre quand le sujet est auto-explicatif
+- Omettre entièrement quand le sujet est auto-explicatif
 - Ajouter corps seulement pour : *pourquoi* non-évident, changements cassants, notes de migration
 - Retour à la ligne à 72 caractères
-- Puces `-` pas `*`
 - Référencer issues/PRs à la fin : `Closes #42`, `Refs #17`
 
 **Ce qui ne doit JAMAIS apparaître :**
-- "Ce commit fait X", "Je", "nous", "maintenant" — le diff dit quoi
+- "Ce commit fait X", "Je", "nous", "maintenant", "actuellement" — le diff dit quoi
 - "Généré avec Claude Code" ou toute attribution IA
 - Emoji (sauf si convention projet l'exige)
 
-## Auto-Clarté
-
-Toujours inclure corps pour : changements cassants, correctifs de sécurité, migrations de données.
-
 ## Limites
 
-Génère uniquement le message de commit. Ne lance pas `git commit`. Output le message dans un bloc de code prêt à coller.
+Génère uniquement le message de commit. Ne lance pas `git commit`, ne met pas en scène les fichiers, n'amende pas.
