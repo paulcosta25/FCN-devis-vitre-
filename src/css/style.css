@@ -1,0 +1,142 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f5f7fa;
+  color: #1a1a2e;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  color: #16213e;
+}
+
+header p {
+  color: #555;
+  margin-top: 0.4rem;
+}
+
+.form-card, .devis-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  border: 1.5px solid #dde1e7;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #0f3460;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.btn-calculer {
+  width: 100%;
+  padding: 0.85rem;
+  background: #0f3460;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
+}
+
+.btn-calculer:hover { background: #16213e; }
+
+#resultat { margin-top: 1.5rem; }
+
+.devis-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1.25rem;
+  color: #0f3460;
+}
+
+.devis-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.devis-table td {
+  padding: 0.55rem 0.25rem;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.95rem;
+}
+
+.devis-table td:last-child { text-align: right; }
+
+.devis-table tr.separator td { padding: 0.25rem; border: none; }
+
+.devis-table tr.total td {
+  padding-top: 0.85rem;
+  font-size: 1.05rem;
+  border-bottom: none;
+  color: #0f3460;
+}
+
+.btn-imprimer {
+  margin-top: 1.25rem;
+  padding: 0.65rem 1.5rem;
+  background: #e8f0fe;
+  color: #0f3460;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-imprimer:hover { background: #cfe0fc; }
+
+.erreur {
+  color: #c0392b;
+  background: #fdecea;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+@media print {
+  body { background: white; padding: 0; }
+  .form-card, .btn-imprimer, header p { display: none; }
+  .devis-card { box-shadow: none; }
+}
