@@ -1,0 +1,12 @@
+{
+  "name": "fcn-devis-vitre",
+  "version": "1.0.0",
+  "description": "Application de génération de devis pour travaux de vitrerie",
+  "scripts": {
+    "dev": "npx serve src -l 3000",
+    "test": "node tests/calcul-prix.test.js"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}
